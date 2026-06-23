@@ -902,12 +902,13 @@
       <span class="material-symbols-outlined">close</span>
     </button>
   </div>
-  <div id="cart-items" class="flex-grow p-6 overflow-y-auto cart-scroll flex flex-col gap-4">
+  <div class="flex-grow overflow-y-auto cart-scroll flex flex-col">
     <div id="cart-empty" class="flex flex-col items-center justify-center h-full text-on-surface-variant gap-4 py-12">
       <span class="material-symbols-outlined text-6xl">shopping_cart</span>
       <p class="font-body-md">Tu carrito está vacío</p>
       <button onclick="closeCart();showPage('catalogo')" class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-label-caps text-label-caps hover:bg-secondary hover:text-white transition-colors">Ver Catálogo</button>
     </div>
+    <div id="cart-items" class="p-6 flex flex-col gap-4"></div>
   </div>
   <div id="cart-footer" class="hidden p-6 border-t border-outline-variant bg-surface-container-lowest">
     <div class="flex justify-between items-center mb-3 font-body-lg">
@@ -997,7 +998,6 @@ function renderCart() {
     badge.classList.add('hidden');
     badge.classList.remove('flex');
     itemsEl.innerHTML = '';
-    itemsEl.appendChild(emptyEl);
     return;
   }
   emptyEl.classList.add('hidden');
